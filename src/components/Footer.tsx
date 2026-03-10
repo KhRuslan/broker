@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { COMPANY_EMAIL } from '../config/contacts'
 
 const FOOTER_LINKS = [
   { to: '/', label: 'Главная' },
@@ -16,6 +17,12 @@ export function Footer() {
             <p className="text-white/80 text-sm mt-1">
               Таможенно-брокерское сопровождение ВЭД
             </p>
+            <a
+              href={`mailto:${COMPANY_EMAIL}`}
+              className="inline-block text-sm text-white/80 hover:text-white transition-colors mt-3"
+            >
+              {COMPANY_EMAIL}
+            </a>
           </div>
           <nav className="flex flex-wrap gap-6">
             {FOOTER_LINKS.map((link) => (

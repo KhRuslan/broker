@@ -1,5 +1,10 @@
 import { MessageCircle } from 'lucide-react'
 import { ContactForm } from '../components/ContactForm'
+import {
+  COMPANY_EMAIL,
+  COMPANY_PHONE_DISPLAY,
+  COMPANY_PHONE_TEL,
+} from '../config/contacts'
 
 const WHATSAPP_NUMBER = '77011116120'
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`
@@ -27,10 +32,21 @@ export function Contacts() {
                   <dt className="text-sm text-gray-500">Телефон</dt>
                   <dd>
                     <a
-                      href="tel:+77011116120"
+                      href={`tel:${COMPANY_PHONE_TEL}`}
                       className="text-[#1e3a5f] font-medium hover:text-[#2d5a8a]"
                     >
-                      +7 701 111 61 20
+                      {COMPANY_PHONE_DISPLAY}
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-gray-500">Почта</dt>
+                  <dd>
+                    <a
+                      href={`mailto:${COMPANY_EMAIL}`}
+                      className="text-[#1e3a5f] font-medium hover:text-[#2d5a8a]"
+                    >
+                      {COMPANY_EMAIL}
                     </a>
                   </dd>
                 </div>

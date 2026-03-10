@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { COMPANY_EMAIL } from '../config/contacts'
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
@@ -81,8 +82,17 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1e3a5f] focus:ring-1 focus:ring-[#1e3a5f] outline-none"
-            placeholder="email@example.com"
+            placeholder="name@example.com"
           />
+          <p className="mt-2 text-sm text-gray-500">
+            Или напишите на{' '}
+            <a
+              href={`mailto:${COMPANY_EMAIL}`}
+              className="text-[#1e3a5f] font-medium hover:text-[#2d5a8a]"
+            >
+              {COMPANY_EMAIL}
+            </a>
+          </p>
         </div>
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
